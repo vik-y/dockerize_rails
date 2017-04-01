@@ -1,24 +1,9 @@
-# README
+# Dockerize Rails application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository is aimed at providing a docker based starter approach for setting up the development environment of rails application. 
 
-Things you may want to cover:
+The code related to docker (Dockerfile and docker-compose.yml) is complete and in place but this will require a lot of documentation to explain how things work. 
 
-* Ruby version
+I have referred to docker hub pages of phpmyadmin, mysql and ruby as well docker-compose documentation to get things in place and working. 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Documentation coming soon. Hopefully :) 
