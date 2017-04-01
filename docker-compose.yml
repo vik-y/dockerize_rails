@@ -1,0 +1,32 @@
+version: '2'
+services:
+  mysqldb:
+    image: mysql:latest
+    container_name: mysqldb
+    volumes:
+      - ./docker/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=test123
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin_testing
+    volumes:
+      - /sessions
+    ports:
+      - 8090:80
+    environment:
+      - PMA_ARBITRARY=1
+      - TESTSUITE_PASSWORD=test123
+    depends_on:
+      - mysqldb
+
+  web:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/myapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysqldb
